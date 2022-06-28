@@ -1,10 +1,10 @@
 - Create a new github repo called reactrouter, clone the repo to your computer and add the link to populi.
 - Use create-react-app in the local project root folder (AKA the project root) to initialize the React project. Run npm start to see the default create-react-app page on localhost:3000.
 - Run npm i react-router-dom@6 in the project root.
-- Create a new folder in project root called /pages.
-- In /pages, create two new files.
-  - /pages/Home.js
-  - /pages/Blogs.js
+- Create a new folder in project root src folder called /pages.
+- In ./src/pages, create two new files.
+  - ./src/pages/Home.js
+  - ./src/pages/Blogs.js
 - In these two files, create and default export a new react component for each file.
   - export default Home () {
     return (
@@ -31,5 +31,46 @@
   - The "/blogs" path should render the <Blogs/> component
   - If you set this up correctly, you should be able to navigate to localhost:3000 to see the Home Page and localhost:3000/blogs to see the Blogs Page
 - In /components/Navbar.js, import the <Link> component from react-router. Add two <Link>'s in Navbar, one to "/" titled "Home" and one to "/blogs" titled "Blogs"
-- Import the Navbar component into /pages/Home.js and /pages/Blogs.js and add above the <h1> tags.
+- Import the Navbar component into ./src/pages/Home.js and ./src/pages/Blogs.js and add above the <h1> tags.
 - If everything has been setup correctly, you should be able to click the two links in the navbar to switch between the Home Page and the Blogs Page in the browser.
+
+## Nested Routing
+
+- Create a new folder ./src/utils and add the sampleBlogs.js file into it as ./src/utils/sampleBlogs.js.
+- Implement the following in the Blogs component:
+  - Create a new component BlogPost in ./src/components/BlogPost.js.
+    - Import the sample blogs into ./src/components/BlogPost.js.
+    - Nest a new route under the "/blogs" route, the path should be ":blogId", the element should be <BlogPost/>
+      - https://reactrouter.com/docs/en/v6/getting-started/tutorial#nested-routes
+    - The BlogPost component should get the blog ID from the useParams() hook and display that blog on the page.
+      - https://reactrouter.com/docs/en/v6/getting-started/tutorial#reading-url-params
+    - Add the <Outlet> react-router component to the <Blogs> component to display the <BlogPost/> component to the /blogs page.
+    - I.E. localhost:3000/blogs/1 should display the blog with id === 1 to the blogs page.
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+
+/coverage
+
+# production
+
+/build
+
+# misc
+
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log\*
