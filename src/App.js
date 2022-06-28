@@ -1,4 +1,3 @@
-
 import { Routes, Route, Link } from "react-router-dom";
 import Blogs from './pages/blogs'
 import Home from './pages/home'
