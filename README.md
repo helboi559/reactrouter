@@ -47,6 +47,19 @@
     - Add the <Outlet> react-router component to the <Blogs> component to display the <BlogPost/> component to the /blogs page.
     - I.E. localhost:3000/blogs/1 should display the blog with id === 1 to the blogs page.
 
+* Create a new component AllBlogs in ./src/components/AllBlogs.js
+  _ Import the sample blogs into ./src/components/AllBlogs.js.
+  _ Nest a new route under the "/blogs" route, the path should be "all", the element should be <AllBlogs/>
+  _ The <AllBlogs /> component should display all the blogs in sample blogs to the page.
+  _ If you set this up correctly, localhost:3000/blogs/all should display all the blogs to the blogs page.
+  _ Implement a query param for sorting in the <AllBlogs /> component.
+  _ I.E. localhost:3000/blogs/all?sortOrder=asc&sortField=createdAt should sort the displayed blogs by ascending order based upon the createdAt date.
+  _ https://reactrouter.com/docs/en/v6/getting-started/tutorial#search-params
+  _ Implement a query param for limit and page in the <AllBlogs /> component. \* I.E. localhost:3000/blogs/all?limit=2&page=1 should show the blog posts with id === 3 and id === 4 since blog posts 1 and 2 are on the first page.
+  Stretch Goal:
+* All query params (sorting, limit, page) in <AllBlogs /> should be able to be used at the same time.
+  - I.E. localhost:3000/blogs/all?limit=4&page=0&sortOrder=desc&sortField=id should show the first 4 blogs sorted by decending order based upon id.
+
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies

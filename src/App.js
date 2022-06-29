@@ -1,8 +1,11 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import BlogPost from "./components/BlogPost";
 import Blogs from './pages/blogs'
 import Home from './pages/home'
 import './App.css'
+import AllBlogs from "./components/AllBlogs";
+import { blogPosts } from "./utils/sampleBlogs";
+
 
 function App() {
   return (
@@ -11,7 +14,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blogs" element={<Blogs />} >
-          <Route path=":blogId" element={<BlogPost/>}/> 
+          <Route path=":blogId" element={<BlogPost blogPosts={blogPosts}/>}/> 
+          <Route path="all" element={<AllBlogs blogPosts={blogPosts}/>}/> 
         </Route>
       </Routes>
     </div>
