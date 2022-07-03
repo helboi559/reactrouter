@@ -59,7 +59,7 @@
   Stretch Goal:
 * All query params (sorting, limit, page) in <AllBlogs /> should be able to be used at the same time.
 
-  - I.E. localhost:3000/blogs/all?limit=4&page=0&sortOrder=desc&sortField=id should show the first 4 blogs sorted by decending order based upon id.
+  - ## I.E. localhost:3000/blogs/all?limit=4&page=0&sortOrder=desc&sortField=id should show the first 4 blogs sorted by decending order based upon id.
 
 * Change the "/blogs/all" route to be the index route for blogs so that the <AllBlogs> component displays in "/blogs" by default (you don't need to define a path for "/blogs/all" anymore since it's the index route).
   - <Route path="/blogs" element={<Blogs />}>

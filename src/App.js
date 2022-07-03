@@ -5,7 +5,7 @@ import Home from './pages/home'
 import './App.css'
 import AllBlogs from "./components/AllBlogs";
 import { blogPosts } from "./utils/sampleBlogs";
-
+import SubmitBlog from "./pages/SubmitBlog";
 
 function App() {
   return (
@@ -14,8 +14,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blogs" element={<Blogs />} >
-          <Route path=":blogId" element={<BlogPost blogPosts={blogPosts}/>}/> 
-          <Route path="all" element={<AllBlogs blogPosts={blogPosts}/>}/> 
+          <Route path="/blogs/single-blog/:blogId" element={<BlogPost blogPosts={blogPosts}/>}/> 
+          <Route index element={<AllBlogs blogPosts={blogPosts}/>}/> 
+          <Route path='submit-blog' element={<SubmitBlog blogPosts={blogPosts}/>}/> 
         </Route>
       </Routes>
     </div>

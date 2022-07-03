@@ -5,7 +5,7 @@ const AllBlogs = (props) => {
     let [searchParams,setSearchParams] = useSearchParams()
     const sortOrder = searchParams.get('sort-order') || 'asc'
     const sortField = searchParams.get('sort-field') || 'createdAt'
-    const limit = Number(searchParams.get('limit')) || 4
+    const limit = Number(searchParams.get('limit')) || 10
     const page = Number(searchParams.get('page')) || 0
     // console.log(searchParams)
     //sort function asc/desc
