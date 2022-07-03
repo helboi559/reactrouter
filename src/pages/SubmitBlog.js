@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import React from 'react'
-
+import {useNavigate} from 'react-router-dom'
 
 
 
@@ -8,6 +8,7 @@ const SubmitBlog = (props) => {
   const [titleText,setTitleText] = useState('')
   const [descriptionText,setDescriptionText] = useState('')
   const [authorText,setAuthorText] = useState('')
+  const navigate = useNavigate()
     return (
     <>
     <label>Title</label>
@@ -40,6 +41,7 @@ const SubmitBlog = (props) => {
         console.log('newPost',newPost)
         // console.log('newPost type',typeof newPost)
         props.blogPosts.push(newPost)
+        navigate('/blogs')
     }}>
         Submit
     </button>
